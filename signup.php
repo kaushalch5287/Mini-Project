@@ -14,7 +14,7 @@
     
     </div>
     <br>
-    <form action="/Action.php" method="post">
+    <form method="post">
         
         <div class="name">
 
@@ -29,6 +29,9 @@
             </div>
             <div class="mother">
                 Mother's Name:<input type="text" placeholder="Enter Name" class="two" name="d_m_name">
+            </div> 
+            <div class="mother">
+                Password :<input type="password" placeholder="Enter password" class="two" name="d_pwd">
             </div> 
 
         </div> 
@@ -141,14 +144,16 @@
 extract($_POST);
         if (isset($subBtn))
         {
-            include_once("./major_db_conn.php");
+            include_once("./mini_db_conn.php");
             $link = mysqli_connect($hostName,$userName,$password,$databaseName);
             // $qry = "insert into tab_stu_data(rollnum,stu_name,stu_email,stu_password,stu_addr)
             // values($i_roll,'$i_snm','$i_mail_id','$i_pwd','$i_addr')";
 
              $qry = "insert into d_details(d_name, d_f_name, d_m_name, dob,
-              b_group, p_no, e_mail, addr, city, state,pincode, weight, pulse, haemo, bp, temp, ques)
-             values('$cnm','$cphone','$cmail','$c_pwd')";
+              b_group, p_no, e_mail, addr, city, state,pincode, weight, pulse, haemo, bp, temp, ques,d_pwd)
+             values('$d_name', '$d_f_name', '$d_m_name', '$dob',
+             '$b_group', '$p_no', '$e_mail', '$addr', '$city', '$state',
+              '$pincode', '$weight', '$pulse', '$haemo', '$bp', '$temp', '$ques','$d_pwd')";
 
             $r = mysqli_query($link,$qry);
             // echo $r;
