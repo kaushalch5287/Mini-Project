@@ -7,7 +7,7 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
  <section class="h-100 gradient-form" style="background-color: #eee;">
-</head>
+
   <div class="container py-5 h-100" >
     <div class="row d-flex justify-content-center align-items-center h-100" >
       <div class="col-xl-10">
@@ -16,7 +16,7 @@
             <div class="col-lg-6" >
               <div class="card-body p-md-5 mx-md-4">
                 <div class="text-center">
-                  <img src="img.png" style="width: 185px; border-radius: 50%;" alt="logo">
+                  <img src="./Images/logo.png" style="width: 185px; border-radius: 50%;" alt="logo">
                   <h4 class="mt-1 mb-5 pb-1">Welcome to Blood point</h4>
                 </div>
                 <form method='post' action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -54,7 +54,7 @@
     {
         if (!empty($user) and !empty($c_pwd))
         {
-            include_once("./major_db_conn.php");
+            include_once("./mini_db_conn.php");
             $link = mysqli_connect($hostName,$userName,$password,$databaseName);
             $qry = "select * from c_details where c_email='$user' and c_password='$c_pwd'";
             $resultset=mysqli_query($link,$qry);
@@ -66,7 +66,7 @@
                 // echo "$stu_name";
                 // setcookie("MyCookie",$stu_name,time()+3600); //Set cookie permanent
                 // unset("MyCookie",$stu_name,time()+3600);  //delete cookie permanent
-                header("location:major_mainpage.php");
+                header("location:Home_page.php");
             }
             else 
             {
