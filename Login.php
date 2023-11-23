@@ -27,7 +27,7 @@
                     <label class="form-label" for="form2Example11">Username</label>
                   </div>
                   <div class="form-outline mb-4">
-                    <input type="password" id="form2Example22" class="form-control" name='c_pwd' placeholder="abc@1233" />
+                    <input type="password" id="form2Example22" class="form-control" name='d_pwd' placeholder="abc@1233" />
                     <label class="form-label" for="form2Example22">Password</label>
                   </div>
                   <div class="text-center pt-1 mb-5 pb-1">
@@ -36,7 +36,7 @@
                   </div>
                   <div class="d-flex align-items-center justify-content-center pb-4">
                     <p class="mb-0 me-2">Don't have an account?</p>
-                  <a href="major_register.php"><input type="button" name="button" id="" value="Create new account"class="btn btn-outline-success"></a> 
+                  <a href="signup.php"><input type="button" name="button" id="" value="Create new account"class="btn btn-outline-success"></a> 
                   </div>
 
                 </form>
@@ -52,11 +52,11 @@
     extract($_POST);
     if(isset($loginBtn))
     {
-        if (!empty($user) and !empty($c_pwd))
+        if (!empty($user) and !empty($d_pwd))
         {
             include_once("./mini_db_conn.php");
             $link = mysqli_connect($hostName,$userName,$password,$databaseName);
-            $qry = "select * from c_details where c_email='$user' and c_password='$c_pwd'";
+            $qry = "select * from d_details where e_mail='$user' and d_pwd='$d_pwd'";
             $resultset=mysqli_query($link,$qry);
             $num_rows=mysqli_num_rows($resultset); 
             if($num_rows)
@@ -66,7 +66,7 @@
                 // echo "$stu_name";
                 // setcookie("MyCookie",$stu_name,time()+3600); //Set cookie permanent
                 // unset("MyCookie",$stu_name,time()+3600);  //delete cookie permanent
-                header("location:Home_page.php");
+                header("location:index.html");
             }
             else 
             {
