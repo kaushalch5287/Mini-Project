@@ -112,13 +112,13 @@ h3{
     border: 1px solid #eb0e0e;
 }
 
-button{
+.button{
     margin-top: 40px;
     padding: 10px;
     background-color: #eb0e0e;
     color: black;
 }
-button:hover{
+.button:hover{
     background-color: red;
     color: white;
 }
@@ -151,5 +151,3 @@ button:hover{
         color: Red;
     }
 }
-
-
