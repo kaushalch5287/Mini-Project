@@ -18,30 +18,30 @@
         
         <div class="name">
 
-            Donor's Name:<input type="text" placeholder="Enter Name" class="one" name="d_name">
+            Donor's Name:<input type="text" placeholder="Enter Name" class="one" name="d_name" required>
         
         </div>
 
         <div class="parents">
 
             <div class="father">
-                Father's Name:<input type="text" placeholder="Enter Name" class="two" name="d_f_name">
+                Father's Name:<input type="text" placeholder="Enter Name" class="two" name="d_f_name" required>
             </div>
             <div class="mother">
-                Mother's Name:<input type="text" placeholder="Enter Name" class="two" name="d_m_name">
+                Mother's Name:<input type="text" placeholder="Enter Name" class="two" name="d_m_name" required>
             </div> 
             <div class="mother">
-                Password :<input type="password" placeholder="Enter password" class="two" name="d_pwd">
+                Password :<input type="password" placeholder="Enter password" class="two" name="d_pwd" required>
             </div> 
 
         </div> 
         <div class="birth">     
             <div>
-                            Date of Birth :&emsp;<input type="date" class="three" name="dob" >
+                            Date of Birth :&emsp;<input type="date" class="three" name="dob" required>
             </div>
 
             <div>
-                            Blood-Group:&emsp;<select name="b_group" id="Group" class="three">
+                            Blood-Group:&emsp;<select name="b_group" id="Group" class="three" required>
                             <option value="Select">Select</option>
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
@@ -55,7 +55,7 @@
             </div>
 
             <div>
-                            Gender:&emsp;<select name="gender" id="Gender" class="three">
+                            Gender:&emsp;<select name="gender" id="Gender" class="three" required>
                             <option value="Select">Select</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -67,26 +67,26 @@
         <div class="details">
             
             <div class="ph">
-                Phone Number:<input type="number" placeholder="Enter Number" class="four" name="p_no">
+                Phone Number:<input type="number" placeholder="Enter Number" class="four" name="p_no" required>
             </div>
             
             <div class="email">
-                Email-Id:<input type="email" placeholder="Enter Gmail-Id" class="six" name="e_mail">
+                Email-Id:<input type="email" placeholder="Enter Gmail-Id" class="six" name="e_mail" required>
             </div>
 
         </div>
 
         <div class="address">
             
-            Address:<input type="textarea" placeholder="Address" class="five" name="addr">
+            Address:<input type="textarea" placeholder="Address" class="five" name="addr" required>
         
         </div>
         
         <div class="detailadd">
 
-            City:<input type="text" placeholder="City" class="other" name="city">
-            State:<input type="text" placeholder="State" class="other" name="state">
-            Pin-Code:<input type="number" placeholder="PinCode" class="other" name="pincode" >
+            City:<input type="text" placeholder="City" class="other" name="city" required>
+            State:<input type="text" placeholder="State" class="other" name="state" required>
+            Pin-Code:<input type="number" placeholder="PinCode" class="other" name="pincode" required>
             
         </div>
         
@@ -135,20 +135,16 @@
         What was the last time you donated blood: <input type="date" id="" class="other" name="ques">
         
         </div>
-        <td align="center">
-            <input type="submit" name="subBtn" id="">
-        </td>
+        <center>
+        <span><input type="submit" name="subBtn" class="button"></span>
+        </center>
     </form>
-
     <?php
 extract($_POST);
         if (isset($subBtn))
         {
             include_once("./mini_db_conn.php");
             $link = mysqli_connect($hostName,$userName,$password,$databaseName);
-            // $qry = "insert into tab_stu_data(rollnum,stu_name,stu_email,stu_password,stu_addr)
-            // values($i_roll,'$i_snm','$i_mail_id','$i_pwd','$i_addr')";
-
              $qry = "insert into d_details(d_name, d_f_name, d_m_name, dob,
               b_group, p_no, e_mail, addr, city, state,pincode, weight, pulse, haemo, bp, temp, ques,d_pwd)
              values('$d_name', '$d_f_name', '$d_m_name', '$dob',
@@ -156,13 +152,10 @@ extract($_POST);
               '$pincode', '$weight', '$pulse', '$haemo', '$bp', '$temp', '$ques','$d_pwd')";
 
             $r = mysqli_query($link,$qry);
-            // echo $r;
             if($r==1)
                 echo "Record Inserted";
             else 
                 echo "Insertion Failed";
-
-                
             mysqli_close($link);
         }
 
