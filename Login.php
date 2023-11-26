@@ -7,12 +7,7 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
  <section class="h-100 gradient-form" style="background-color: #eee;">
-
-  <div class="container py-5 h-100" >
-    <div class="row d-flex justify-content-center align-items-center h-100" >
-      <div class="col-xl-10">
-        <div class="card rounded-3 text-black">
-          <div class="row g-0">
+ <div class="main" style="display: flex; flex-direction: column; align-items: center ;background-image:url('https://static.vecteezy.com/system/resources/previews/007/849/341/original/blood-donation-equipment-background-free-vector.jpg'); background-repeat: no-repeat; background-size: cover;">
             <div class="col-lg-6" >
               <div class="card-body p-md-5 mx-md-4">
                 <div class="text-center">
@@ -42,12 +37,8 @@
                 </form>
             </div>
         </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
+</div>
 <?php
     extract($_POST);
     if(isset($loginBtn))
@@ -63,9 +54,6 @@
             {
                 $data = mysqli_fetch_assoc($resultset);
                 extract($data);
-                // echo "$stu_name";
-                // setcookie("MyCookie",$stu_name,time()+3600); //Set cookie permanent
-                // unset("MyCookie",$stu_name,time()+3600);  //delete cookie permanent
                 header("location:index.html");
             }
             else 
