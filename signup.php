@@ -135,6 +135,7 @@
         What was the last time you donated blood: <input type="date" id="" class="other" name="ques">
         
         </div>
+         <a href="home.html" style="text-decoration:none; border: 2px solid red; margin: 2px; padding: 4px; background-color: red; color: white;">Back to home</a>
         <center>
         <span><input type="submit" name="subBtn" class="button"></span>
         </center>
