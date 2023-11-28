@@ -11,7 +11,7 @@
     font-family: sans-serif;
 }
 body{
-    background: url('Images/blood1.png');
+    background: url('./assets/blood1.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -125,7 +125,7 @@ h3{
 @media screen and (min-width: 200px) and (max-width:1200px){
     body{
         background-size: 100% 100%;
-        background-image: url(./Images/drop.png);   
+        background-image: url(./assets/drop.png);   
     }
     *{
         flex-wrap: wrap;
