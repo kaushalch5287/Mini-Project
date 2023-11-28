@@ -125,7 +125,7 @@ h3{
 @media screen and (min-width: 200px) and (max-width:1200px){
     body{
         background-size: 100% 100%;
-        background-image: url(./assets/drop.png);   
+        background-image: url(./assets/img.png);   
     }
     *{
         flex-wrap: wrap;
