@@ -11,7 +11,7 @@
             <div class="col-lg-6" >
               <div class="card-body p-md-5 mx-md-4">
                 <div class="text-center">
-                  <img src="./Images/logo.png" style="width: 185px; border-radius: 50%;" alt="logo">
+                  <img src="./assets/logo.png" style="width: 185px; border-radius: 50%;" alt="logo">
                   <h4 class="mt-1 mb-5 pb-1">Welcome to Blood point</h4>
                 </div>
                 <form method='post' action="<?php echo $_SERVER['PHP_SELF']; ?>">
